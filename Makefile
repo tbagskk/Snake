@@ -1,10 +1,10 @@
 NAME = snake
 
-SRCS =	main.cpp \
-		mouvement.cpp \
-		snake.cpp \
-		food.cpp \
-		other.cpp
+SRCS =	Src/main.cpp \
+		Src/mouvement.cpp \
+		Src/snake.cpp \
+		Src/food.cpp \
+		Src/other.cpp
 
 		
 
