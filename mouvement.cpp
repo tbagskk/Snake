@@ -1,8 +1,9 @@
 #include "snake.h"
 
 
+
 Grid::Grid(int width, int height, int size) : m_width(width), m_height(height), m_size(size) {
-    // Initialiser la grille avec des carrés de taille 'size'
+
     for (int i = 0; i < m_height; i++) {
         std::vector<sf::RectangleShape> row;
         for (int j = 0; j < m_width; j++) {
@@ -18,7 +19,7 @@ Grid::Grid(int width, int height, int size) : m_width(width), m_height(height), 
 }
 
 void Grid::draw(sf::RenderWindow& window) const {
-    // Dessiner la grille sur la fenêtre
+
     for (int i = 0; i < m_height; i++) {
         for (int j = 0; j < m_width; j++) {
             window.draw(m_grid[i][j]);

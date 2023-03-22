@@ -1,6 +1,6 @@
 #include "snake.h"
 
-//fonction pour initialiser les differentes valeurs
+//fonction pour initialiser les différentes valeurs
 
 void Snake::init(int i)
 {
@@ -12,7 +12,7 @@ void Snake::init(int i)
     down = false;
 }
 
-//fonction pour changer la direction du serpent en fonction de la touche presse
+//fonction pour changer la direction du serpent en fonction de la touche pressé
 
 void Snake::movement(Event &event, sf::RenderWindow& window)
 {
@@ -46,7 +46,7 @@ void Snake::movement(Event &event, sf::RenderWindow& window)
     }  
 }
 
-//fonction pour verifier les collisions avec les murs ou avec la queue du serpent
+//fonction pour vérifier les collisions avec les murs ou avec la queue du serpent
 
 void Snake::check(sf::RenderWindow& window)
 {
@@ -111,7 +111,7 @@ void Snake::speed_draw(sf::RenderWindow& window)
     
 }
 
-//fonction pour verifier si les entres sont viables
+//fonction pour vérifier si les entrés sont viables
 
 int Snake::parsing(int ac, char **av)
 {

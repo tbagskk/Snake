@@ -1,6 +1,6 @@
 #include "snake.h"
 
-//fonction qui permet de generer aleatoirement une position pour la nouriture du serpent
+//fonction qui permet de générer aleatoirement une position pour la nouriture du serpent
 
 void Snake::food()
 {
@@ -12,7 +12,7 @@ void Snake::food()
     snake_food.setPosition(x * 60, y * 60);
 }
 
-//fonction pour verifier si le serpent a mange la nourriture
+//fonction pour vérifier si le serpent à mangé la nourriture
 
 void Snake::eating()
 {
