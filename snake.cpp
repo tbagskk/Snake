@@ -6,25 +6,23 @@ void Snake::add_case()
 {
     sf::RectangleShape rect;
     rect.setSize(sf::Vector2f(GRID_SIZE, GRID_SIZE));
+    rect.setFillColor(sf::Color::Green);
     if (tab.empty())
-    {
         rect.setFillColor(sf::Color::White); 
-    }
+    else if (tab.size() == 1)
+        rect.setPosition(tab[0].getPosition().x, tab[0].getPosition().y);
     else
-    {
-        rect.setFillColor(sf::Color::Green);
         rect.setPosition(tab[1].getPosition().x, tab[1].getPosition().y);
-    }
     win++;
    tab.push_back(rect);
 }
 
-//fais avancer le serpent chaque xTemps dans la direction choisi
+//fait avancer le serpent chaque xTemps dans la direction choisi
 
 void Snake::travel(sf::RenderWindow& window)
 {
     int i = tab.size() - 1;
-    if (time < 150)
+    if (time < speed)
         time += mClock.restart().asMilliseconds();
     else
     {
@@ -58,5 +56,7 @@ void Snake::draw(sf::RenderWindow& window)
         window.draw(tab[i]);
         i++;
      }
+    score(window);
+    speed_draw(window);
 }   
 

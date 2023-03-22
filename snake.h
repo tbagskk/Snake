@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <ctime>
+#include <stdlib.h>
 using namespace std;
 using namespace sf;
 
@@ -19,15 +20,14 @@ public:
     void draw(sf::RenderWindow& window) const;
 
 private:
-    int m_width;
-    int m_height;
-    int m_size;
+    int m_width, m_height, m_size; 
     std::vector<std::vector<sf::RectangleShape>> m_grid;
 };
 
 class Snake {
 public:
     Snake(float x, float y, int size){
+        add_case();
         add_case();
         time = 0.0f;
     }; 
@@ -36,25 +36,25 @@ public:
     void add_case();
     void eating();
     void travel(sf::RenderWindow& window);
-    void init();
+    void init(int speed);
+    void score(sf::RenderWindow& window);
     void check(sf::RenderWindow& window);
     void movement(Event &event, sf::RenderWindow& window);
+    int parsing(int ac, char **av);
+    void speed_draw(sf::RenderWindow& window);
     std::vector<sf::RectangleShape> tab;
-    
+  
 private:
     
     sf::RectangleShape snake_food;
     sf::Clock mClock;
-    int m_size;
-    int time;
-    int real_time;
-    int win;
-    bool left;
-    bool right;
-    bool up;
-    bool down;
-    int x;
-    int y;
+    sf::Font font;
+    sf::Text text;
+    sf::Text speed_d;
+    sf::Text score_text;
+    sf::Text speed_text;
+    int m_size, time, real_time, speed, x, y, win;
+    bool left, right, up, down;
 };
 
 #endif 
